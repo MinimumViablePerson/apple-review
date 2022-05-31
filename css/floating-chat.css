@@ -1,0 +1,15 @@
+.floating-chat {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 1;
+
+  background-color: white;
+  padding: 1rem;
+  border: 1px solid #000;
+  border-radius: 50%;
+}
+
+.floating-chat span {
+  font-size: 2rem;
+}
