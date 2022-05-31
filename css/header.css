@@ -1,3 +1,36 @@
+.menu-checkbox {
+  position: fixed;
+  top: 8px;
+  left: 10px;
+  z-index: 30;
+
+  appearance: none;
+  display: none;
+}
+
+.menu-checkbox::before {
+  content: '=';
+  font-weight: 100;
+  color: #ffffffaa;
+  font-size: 1.7rem;
+}
+
+.menu-checkbox:checked::before {
+  content: '×';
+  color: #ffffffaa;
+  font-size: 1.7rem;
+}
+
+.header.mobile {
+  height: 50px;
+  transition: 500ms;
+}
+
+.menu-checkbox:checked ~ .header.mobile {
+  height: 100vh;
+  background-color: #000000;
+}
+
 .header {
   background-color: #000000cc;
   color: white;
@@ -11,6 +44,7 @@
 
 .header.mobile {
   display: none;
+  overflow: hidden;
 }
 
 .header__nav-list {
@@ -37,12 +71,23 @@
   filter: invert(0.8);
 }
 
+.header__menu {
+  display: grid;
+}
+
+.header__menu li {
+  border-bottom: 1px solid grey;
+  padding: 1rem;
+  color: #ffffffcc;
+}
+
 @media screen and (max-width: 950px) {
   .header {
     display: none;
   }
 
-  .header.mobile {
+  .header.mobile,
+  .menu-checkbox {
     display: block;
   }
 }
